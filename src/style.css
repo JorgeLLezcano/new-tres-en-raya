@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: system-ui, sans-serif;
+  color: white;
+  background: linear-gradient(
+    170deg,
+    rgba(58, 56, 56, 0.623) 0%,
+    rgb(31, 31, 31) 100%
+  );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+}
+h1 {
+  margin-top: 20px;
+  font-weight: 800;
+  font-size: 1.5rem;
+  align-items: center;
+}
+.bloques {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.winner {
+  background-color: red;
+}
+.block {
+  border: solid;
+  height: 50px;
+  width: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 3px 3px;
+  transition: all 0.2s ease-out;
+}
+.block:hover {
+  background-color: grey;
+}
+.block:active {
+  transform: rotate(380deg);
+}
+.btnReincio {
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  box-shadow: 1px 0px 10px 0px white;
+}
+.btnReincio:active {
+  box-shadow: 0 0 0;
+}
+.popUp {
+  /* background-color: white; */
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  flex-direction: column;
+  color: rgb(236, 225, 225);
+  border: solid;
+  animation: slide-in-top 0.3s ease-in-out;
+  background: linear-gradient(
+    170deg,
+    rgba(58, 56, 56, 0.623) 0%,
+    rgb(31, 31, 31) 100%
+  );
+}
+.btn-continuar {
+  margin-top: 10px;
+  background-color: green;
+  height: 30px;
+  width: 100px;
+  cursor: pointer;
+  color: white;
+  box-shadow: 1px 0px 10px 0px white;
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.contador {
+  display: flex;
+  justify-content: space-around;
+  width: 100vw;
+}
+.menu {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  flex-direction: column;
+  /* background: linear-gradient(
+    170deg,
+    rgba(27, 27, 27, 0.623) 0%,
+    rgb(5, 5, 5) 100%
+  ); */
+  background-color: black;
+  gap: 10px;
+  animation: slide-in-top 0.3s ease-in-out;
+}
+
+.btn-ponente {
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  box-shadow: 1px 0px 10px 0px white;
+}
+
+.btn-pc {
+  height: 40px;
+  width: 100px;
+  cursor: pointer;
+  box-shadow: 1px 0px 10px 0px white;
+}
+
+.conteiner {
+  perspective: 500px;
+  width: 150px;
+  height: 150px;
+}
+
+.cubo {
+  color: white;
+  position: relative;
+  width: 150px;
+  height: 150px;
+  transition: transform 2.5s ease-in-outqw;
+  transform-style: preserve-3d;
+  animation: rotate 3s 3;
+}
+
+.title1 {
+  transform: translateZ(75px);
+  background-color: grey;
+  text-shadow: 0px 1px 10px black;
+}
+.title2 {
+  transform: rotateY(90deg) translateZ(75px);
+  background-color: red;
+}
+.title3 {
+  transform: translateZ(-75px) rotateY(180deg);
+  background-color: green;
+}
+.title4 {
+  transform: rotateY(270deg) translateZ(75px);
+  background-color: skyblue;
+}
+
+.title1,
+.title2,
+.title3,
+.title4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  padding: 10px;
+  border: 3px solid;
+}
+@keyframes rotate {
+  0% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(-360deg);
+  }
+}
+
