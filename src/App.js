@@ -85,23 +85,23 @@ export default function App() {
           }
         }
       }
-
+      const newBloque = [...bloque];
+      newBloque[move] = TURN.O;
       // Realizar la mejor jugada
-      setBloque((prevBloque) => {
-        const newBloque = [...prevBloque];
-        newBloque[move] = TURN.O;
-        return newBloque;
-      });
+      setBloque(newBloque);
+    
       // Verificar si hay ganador después de la jugada
 
-      const newWinner = checkWinner(newBloc);
+      const newWinner = checkWinner(newBloque);
+
       if (newWinner === TURN.O) {
         setWinner(TURN.O);
+        setCountO(countO + 1);
         return;
       }
       setTurn(TURN.X);
     }
-    return;
+    
   }
 
   function minimax(newBloque, depth, isMaximizing) {
@@ -141,15 +141,15 @@ export default function App() {
     if (gameMode === 'solo, vs PC' && turn === TURN.O) {
       jugadaPC();
     }
-  }, [turn]);
+  }, [turn, winner]);
 
   function handlrClick(index) {
     event.preventDefault();
     // setWinner(null);
-    if (winner || bloque[index]) {
-      return;
-    }
-
+  
+    const winner = checkWinner(bloque)
+    if (winner || bloque[index])return;
+   
     const newBloque = [...bloque];
     newBloque[index] = turn;
 
@@ -160,8 +160,12 @@ export default function App() {
     const newWinner = checkWinner(newBloque);
 
     if (newWinner) {
-      newWinner === TURN.O ? setCountO(countO + 1) : '';
-      newWinner === TURN.X ? setCountX(countX + 1) : '';
+      // Si hay un ganador, suma los puntos y muestra el popup
+      if (newWinner === TURN.O) {
+        setCountO(countO + 1); // Sumar punto para la computadora
+      } else if (newWinner === TURN.X) {
+        setCountX(countX + 1); // Sumar punto para el jugador
+      }
 
       // Si hay ganador, muestra un mensaje o realiza la acción que desees
       conffeti();

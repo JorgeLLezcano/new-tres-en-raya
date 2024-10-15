@@ -48,11 +48,20 @@ h1 {
   cursor: pointer;
   box-shadow: 3px 3px;
   transition: all 0.2s ease-out;
+  overflow: hidden;
+}
+.pieza {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  transition: all 0.2s ease-out;
+  align-items: center;
+  justify-content: center;
 }
 .block:hover {
   background-color: grey;
 }
-.block:active {
+.pieza:active {
   transform: rotate(380deg);
 }
 .btnReincio {
