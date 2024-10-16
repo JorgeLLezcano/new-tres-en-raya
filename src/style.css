@@ -209,3 +209,18 @@ h1 {
   }
 }
 
+svg{
+  position: absolute;
+  height: 300px;
+  pointer-events: none;
+}
+
+.conteiner-line{
+  position: absolute;
+  height: 200px;
+  pointer-events: none;
+  width: 200px;
+}
+line{
+  stroke: red;
+}

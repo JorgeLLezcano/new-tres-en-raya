@@ -53,7 +53,6 @@ export default function App() {
   function handleContinua() {
     setBloque(Array(9).fill(null));
     setWinner(null);
-    // setTurn(turn === TURN.X ? TURN.O : TURN.X);
     winner === TURN.X ? setTurn(TURN.X) : setTurn(TURN.O);
     saveToLocalStorage();
   }
@@ -91,7 +90,6 @@ export default function App() {
       setBloque(newBloque);
     
       // Verificar si hay ganador después de la jugada
-
       const newWinner = checkWinner(newBloque);
 
       if (newWinner === TURN.O) {
@@ -214,11 +212,25 @@ export default function App() {
             winner={winner}
           />
         ))}
+ 
       </div>
+  <div className='conteiner-line'>
+  <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="500" y1="480" x2="40" y2="480" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="50" y1="170" x2="500" y2="160" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+</svg>
+  </div>
       <h1> Turno : {turn} </h1>
       <button className="btnReincio" onClick={handleReset}>
         Reinicio
       </button>
+ 
     </>
   );
 }
