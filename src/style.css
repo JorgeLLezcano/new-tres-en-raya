@@ -227,8 +227,14 @@ line{
 
 .cruz-dos, .vert-left,
 .vert-medio, .cruz-dos,
-.orizont-medio, .orizont-up,
-.orizont-down, .vert-rigth{
+.horizont-medio, .horizont-up,
+.horizont-down, .vert-rigth{
   /* stroke: white; */
-  opacity: 0;
+   opacity: 0;
 }
+
+.visible{
+
+  opacity: 1;
+}
+
