@@ -224,3 +224,11 @@ svg{
 line{
   stroke: red;
 }
+
+.cruz-dos, .vert-left,
+.vert-medio, .cruz-dos,
+.orizont-medio, .orizont-up,
+.orizont-down, .vert-rigth{
+  /* stroke: white; */
+  opacity: 0;
+}

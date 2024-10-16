@@ -216,14 +216,18 @@ export default function App() {
       </div>
   <div className='conteiner-line'>
   <svg viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="500" y1="480" x2="40" y2="480" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="50" y1="170" x2="500" y2="160" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
-  <line x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25"/>
+  <line className='vert-rigth' x1="430" y1="532" x2="426" y2="100" stroke="#70AEDB" stroke-width="25" 
+  style={{opacity:winningConditions && winningConditions.toString()=== [2, 5, 8].toString() ? '1' : '0'}}/>
+
+  <line className='orizont-down' x1="500" y1="480" x2="40" y2="480" stroke="#70AEDB" stroke-width="25"
+   style={{opacity:winningConditions && winningConditions.toString()=== [6, 7, 8].toString() ? '1' : '0'}}/>
+
+  <line className='orizont-up' x1="50" y1="170" x2="500" y2="160" stroke="#70AEDB" stroke-width="25"/>
+  <line className='orizont-medio' x1="51" y1="303" x2="500" y2="301" stroke="#70AEDB" stroke-width="25"/>
+  <line className='cruz-dos' x1="455" y1="142" x2="75" y2="522" stroke="#70AEDB" stroke-width="25"/>
+  <line className='vert-medio' x1="269" y1="88" x2="265" y2="522" stroke="#70AEDB" stroke-width="25"/>
+  <line className='vert-left' x1="100" y1="88" x2="100"y2="522" stroke="#70AEDB" stroke-width="25"/>
+  <line className='cruz-dos' x1="75" y1="142" x2="455" y2="522" stroke="#70AEDB" stroke-width="25"/>
 </svg>
   </div>
       <h1> Turno : {turn} </h1>
