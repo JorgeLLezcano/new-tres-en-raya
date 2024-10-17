@@ -75,6 +75,7 @@ h1 {
 }
 .popUp {
   /* background-color: white; */
+  z-index: 1000;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -128,6 +129,7 @@ h1 {
   align-content: center;
   justify-items: center;
   flex-direction: column;
+ 
   /* background: linear-gradient(
     170deg,
     rgba(27, 27, 27, 0.623) 0%,
@@ -136,6 +138,7 @@ h1 {
   background-color: black;
   gap: 10px;
   animation: slide-in-top 0.3s ease-in-out;
+
 }
 
 .btn-ponente {
@@ -235,7 +238,7 @@ line{
   stroke-dashoffset: 1300;
   stroke-dasharray: 1300;
   animation: dash 1.5s ease-in both;
-  animation-delay: 2s;
+  animation-delay: 3s;
 }
 
 .visible{
