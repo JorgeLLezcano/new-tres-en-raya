@@ -226,11 +226,16 @@ line{
 }
 
 .cruz-dos, .vert-left,
-.vert-medio, .cruz-dos,
+.vert-medio, .cruz-uno,
 .horizont-medio, .horizont-up,
 .horizont-down, .vert-rigth{
   /* stroke: white; */
-   opacity: 0;
+   /* opacity: 1; */
+   fill-opacity: 0;
+  stroke-dashoffset: 1300;
+  stroke-dasharray: 1300;
+  animation: dash 1.5s ease-in both;
+  animation-delay: 2s;
 }
 
 .visible{
@@ -238,3 +243,13 @@ line{
   opacity: 1;
 }
 
+@keyframes dash{
+  90%{
+    fill-opacity: 0;
+  }
+  100%{
+    fill-opacity: 100%;
+    stroke-dashoffset: 0;
+    /* stroke-width: 1; */
+  }
+}
