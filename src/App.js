@@ -7,7 +7,8 @@ import { PopUp } from './componentes/PopUp.js';
 import { Counter } from './componentes/Counter.js';
 import { Casillas } from './componentes/casillas.js';
 import { TURN, winningConditions } from './constants.js';
-
+import { io } from 'socket.io-client';
+const socket = io('http://localhost:3000');
 export default function App() {
   const [bloque, setBloque] = useState(
     JSON.parse(localStorage.getItem('bloque')) || Array(9).fill(null)
@@ -21,6 +22,14 @@ export default function App() {
     localStorage.setItem('bloque', JSON.stringify(bloque));
     localStorage.setItem('turn', turn);
   };
+  socket.on('updateBoard', (move, index) => {
+    // Actualiza el tablero con la jugada del oponente
+    setBloque((prevBloque) => {
+      const newBloque = [...prevBloque];
+      newBloque[index] = move;
+      return newBloque;
+    });
+  });
 
   function checkWinner(newBloque) {
     for (const condition of winningConditions) {
@@ -144,10 +153,12 @@ export default function App() {
   function handlrClick(index) {
     event.preventDefault();
     // setWinner(null);
-  
+   
     const winner = checkWinner(bloque)
     if (winner || bloque[index])return;
-   
+
+    // socket.emit('makeMove', roomId, { move: turn, index: index });
+
     const newBloque = [...bloque];
     newBloque[index] = turn;
 

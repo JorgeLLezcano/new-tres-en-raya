@@ -14,3 +14,4 @@ export function PopUp({ winner, onReset, handleContinua }) {
     </div>
   );
 }
+
